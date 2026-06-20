@@ -1,0 +1,7 @@
+export {registerValidationRules} from "./register.validator.js"
+export {loginValidationRules} from "./login.validator.js"
+export {verifyEmailValidationRules} from "./verifyEmail.validator.js"
+export {resetPasswordValidationRules} from "./resetPassword.validator.js"
+export {forgotPasswordValidationRules} from "./forgotPassword.validator.js"
+export {changePasswordValidationRules} from "./changePassword.validator.js"
+export {resendEmailValidationRules} from "./resendEmail.validator.js"
