@@ -2,7 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import { AuthRedirect } from "./routeGuards/AuthRedirect";
 import { ProtectedRoute } from "./routeGuards/ProtectedRoute";
 import { PublicRoute } from "./routeGuards/PublicRoute";
-import {LoginPage , Dashboard} from "../pages/index.js"
+import { LoginPage, Dashboard, TaskPage } from "../pages/index.js";
+import AppLayout from "../layouts/AppLayout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,13 +18,23 @@ const router = createBrowserRouter([
       </PublicRoute>
     ),
   },
+  
   {
-    path: "/dashboard",
     element: (
       <ProtectedRoute>
-        <Dashboard />
+        <AppLayout />
       </ProtectedRoute>
     ),
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/tasks",
+        element: <TaskPage />,
+      },
+    ],
   },
 ]);
 
