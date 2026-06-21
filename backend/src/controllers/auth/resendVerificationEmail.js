@@ -27,7 +27,7 @@ export const resendVerificationEmail = asyncHandler(async (req, res) => {
 
   //----Send verification email with the raw token----
 
-  const verificationLink = `${process.env.CLIENT_URL}/auth/verify-email?token=${rawToken}`;
+  const verificationLink = `${process.env.CLIENT_URL}/verify-email/${rawToken}`;
 
   try {
     await sendMail(user.email, verificationLink);

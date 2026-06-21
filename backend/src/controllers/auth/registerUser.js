@@ -33,7 +33,7 @@ export const registerUser = asyncHandler(async (req, res) => {
   console.log(`User registered: ${createdUser.email}`);
 
   //---creating and sending verification email to client---
-  const verificationLink = `${process.env.CLIENT_URL}/auth/verify-email?token=${rawToken}`;
+  const verificationLink = `${process.env.CLIENT_URL}/verify-email/${rawToken}`;
 
   try {
     await sendMail(createdUser.email, verificationLink);
